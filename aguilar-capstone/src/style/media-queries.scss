@@ -1,0 +1,98 @@
+@media screen and (max-width: 650px) {
+    .header-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .nav-link-wrapper {
+            margin: 20px 20px;
+
+            a {
+                margin-right: 30px;
+            }
+        }
+    }
+
+    .footer-wrapper {
+        height: 100%;
+        flex-direction: column;
+    }
+
+    .carousel {
+        display: grid;
+        grid-template-columns: 1fr 4fr 1fr;
+        width: 100%;
+    }
+
+
+    .services-wrapper {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin: 0;
+    }
+
+    .image-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        grid-gap: 0px;
+        margin: 0;
+    }
+
+    .single-image img {
+        width: 100%;
+    }
+
+    .contact-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100%;
+    }
+
+    .thank-you-picture img {
+        margin-top: 20px;
+    }
+
+    .info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .text-area {
+        width: 320px;
+    }
+    
+
+    .no-page-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        margin: 50px 20px;
+    }
+
+    .no-page-picture img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .no-page-text {
+        h2 {
+            font-size: 50px;
+        }
+
+        p {
+            font-size: 25px;
+            text-align: center;
+            margin: 20px;
+        }
+    }
+
+  }
