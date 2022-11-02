@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -10,25 +10,36 @@ import NoPageFound from './pages/no-page-found';
 import Footer from './features/footer-container';
 import Icons from '../helpers/icons';
 
-export default class App extends Component {
-  render() {
-    Icons();
+export default function() {
+  Icons();
+      
+  const [data, setData] = useState([{}])
 
-    return (
-      <div className='app'>
-        <Router>
-          <div>
-            <Header />
-            <Switch>
-              <Route exact path="/" component={Home} />
-              <Route path="/services" component={Services} />
-              <Route path="/contact" component={Contact} />
-              <Route component={NoPageFound} />
-            </Switch>
-            <Footer />
-          </div>
-        </Router>
-      </div>
-    );
-  }
+  useEffect(() => {
+    fetch("/api").then(response => 
+        response.json()
+    ).then(data => {
+        setData(data)
+        console.log(data)
+    })
+    .then(error => console.log(error))
+  }, [])
+
+  return (
+    <div className='app'>
+      {data.deploy}
+      <Router>
+        <div>
+          <Header />
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route path="/services" component={Services} />
+            <Route path="/contact" component={Contact} />
+            <Route component={NoPageFound} />
+          </Switch>
+          <Footer/>
+        </div>
+      </Router>
+    </div>
+  );
 }
